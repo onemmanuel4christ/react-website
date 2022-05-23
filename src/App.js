@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Intro from "./components/Intro";
+import Navbar from "./components/Navbar";
 
+const Container = styled.div`
+  height: 100vh;
+  overflow: hidden;
+`
+const IntroShape = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(67% 0%, 100% 0%, 100% 100%, 55% 100%);
+    background-color: crimson;
+    z-index: -1;
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Navbar />
+      <Intro />
+      <IntroShape />
+    </Container>
   );
 }
 
